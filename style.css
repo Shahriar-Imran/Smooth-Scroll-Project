@@ -108,12 +108,24 @@ img {
 /* Make the background #f4f4f4 and the padding 20px for all sections that have an image */
 .section:has(img) {
     background: #f4f4f4;
+    padding: 20px;
 }
 
 /* Make the first paragraph after a ul #f4f4f4 */
 
+ul + p {
+    background-color: #333;
+    color: #f4f4f4;
+}
 
 /* Make the color of any links that start with http:// or https:// red */
-
+a[href^='http://'],
+a[href^='https://'] {
+    color: red;
+}
 
 /* Make the first link in the first paragraph and the second paragraph of the second section bold */
+.section:nth-of-type(2) p:first-of-type a:first-of-type, 
+.section:nth-of-type(2) p:nth-of-type(2) {
+    font-weight: bold;
+}
